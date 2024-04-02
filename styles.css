@@ -1,0 +1,332 @@
+@font-face {
+    font-family: Open Sans;
+    src: url("fonts/Open_Sans/OpenSans-VariableFont_wdth\,wght.ttf");
+    font-weight: 300-800;
+    font-style: normal;
+  }
+  
+  :root {
+    --toggle-border-radius: 10px;
+    --input-border: 1px solid rgb(151, 151, 151);
+  }
+  
+  html {
+    box-sizing: border-box;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: inherit;
+  }
+  
+  body {
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    font-family: "Times New Roman", Times, serif;
+  }
+  
+  fieldset {
+    margin: 0;
+    padding: 0;
+  }
+  
+  .books-container {
+    padding: 20px 20px 10px;
+    display: grid;
+    gap: 10px;
+  }
+  
+  /* Table */
+  
+  /* .table-container {
+    max-height: 600px;
+    overflow-y: auto;
+  } */
+  
+  table.books thead {
+    position: sticky;
+    top: -1px;
+    z-index: 10;
+    background-color: rgb(251, 234, 201);
+    margin: 0;
+  
+  }
+  
+  .table-title {
+    font-size: 30px;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  table.books {
+    table-layout: fixed;
+    max-width: 100%;
+    min-width: 500px;
+    border-collapse: collapse;
+    border: 1px solid rgba(128, 128, 128, 0.31);
+  }
+  
+  th,
+  td {
+    padding: 20px;
+  }
+  
+  th {
+    letter-spacing: 2px;
+  }
+  
+  td {
+    letter-spacing: 1px;
+    word-break: break-word;
+  }
+  
+  thead {
+    text-align: left;
+  }
+  
+  .table-data .table-row {
+    cursor: pointer;
+  }
+  
+  .table-data .table-row:hover {
+    background-color: #f4f3f3a8;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  
+  /* Add Book Button */
+  
+  button.add-book:hover {
+    background-color: rgb(245, 227, 191);
+  }
+  
+  button.add-book {
+    margin: 0 auto 15px;
+    display: block;
+    padding: 5px 40px;
+  
+    font-size: 40px;
+  
+    text-wrap: nowrap;
+    color: rgb(76, 72, 61);
+    border: none;
+    border-radius: 15px;
+    font-weight: bold;
+    background-color: rgb(245, 234, 212);
+  }
+  
+  /* Delete rows button */
+  
+  .delete-button {
+    padding: 4px 8px;
+    border: none;
+    background-color: #061c6ede;
+    font-weight: bold;
+    border-radius: 7px;
+    color: white;
+    visibility: hidden;
+    width: 160px;
+  }
+  
+  .delete-button:hover {
+    background-color: #031247de;
+  }
+  
+  /* Checkboxes */
+  
+  input[type="checkbox"]:hover {
+    cursor: pointer;
+  }
+  
+  #headerCheckbox {
+    display: none;
+  }
+  
+  /* Status */
+  
+  .status-span.read,
+  .status-span.not-read {
+    padding: 5px 20px;
+    border-radius: 15px;
+    color: white;
+    font-weight: bold;
+    font-family: Open Sans, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0;
+    text-wrap: nowrap;
+  }
+  
+  .status-span.read {
+    background-color: rgb(72, 158, 32);
+  }
+  
+  .status-span.not-read {
+    background-color: rgb(177, 28, 14);
+  }
+  
+  .status-span {
+    cursor: pointer;
+  }
+  
+  .status-span.not-read:hover {
+    background-color: rgb(142, 22, 11);
+  }
+  
+  .status-span.read:hover {
+    background-color: rgb(58, 128, 26);
+  }
+  
+  /* Dialog */
+  
+  .add-book-dialog {
+    font-family: Open Sans;
+  }
+  
+  .add-book-dialog .close-dialog {
+    position: absolute;
+    top: 10px;
+    right: 6px;
+    background: none;
+    border: none;
+    font-size: 1.2em;
+    fill: #444444;
+  }
+  
+  .add-book-dialog {
+    border: var(--input-border);
+    border-radius: 15px;
+  }
+  
+  .add-new-book-form {
+    display: grid;
+    gap: 20px;
+    padding: 10px 50px 10px 20px;
+  }
+  
+  .add-new-book-form article {
+    display: grid;
+    gap: 20px;
+  }
+  
+  .add-new-book-form input[type="text"],
+  .add-new-book-form input[type="number"] {
+    height: 35px;
+    border: var(--input-border);
+    border-radius: 5px;
+    padding-left: 5px;
+  }
+  
+  .add-new-book-form input[type="number"] {
+    -webkit-appearance: none;
+    -moz-appearance: textfield;
+  }
+  
+  .add-new-book-form input[type="number"]::-webkit-inner-spin-button,
+  .add-new-book-form input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  
+  .add-new-book-form .pages-amount input[type="number"] {
+    width: 70px;
+  }
+  
+  .add-new-book-form .row-container {
+    display: grid;
+    gap: 4px;
+  }
+  
+  .add-book-dialog fieldset {
+    border: none;
+  }
+  
+  .add-book-dialog h1 {
+    font-weight: 300;
+    margin: 0;
+  }
+  
+  .add-new-book-form footer {
+    display: grid;
+  }
+  
+  .add-new-book-form button {
+    padding: 10px 25px;
+    background-color: rgb(48, 75, 174);
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    border: none;
+    border-radius: 7px;
+    margin-top: 20px;
+  }
+  
+  button:disabled {
+    background-color: #cccccc;
+    color: #888888;
+  }
+  
+  .close-dialog {
+    padding: 5px;
+  }
+  
+  .close-dialog svg {
+    display: block;
+    pointer-events: none;
+  }
+  
+  .close-dialog:hover {
+    fill: #646464;
+    background-color: #f4f4f4d9;
+    border-radius: 50%;
+  }
+  
+  /* Form row Toggle */
+  
+  .form-toggle {
+    display: inline-block;
+    overflow: hidden;
+  }
+  
+  .toggle-title {
+    margin-bottom: 4px;
+  }
+  
+  .form-toggle-item {
+    float: left;
+    display: inline-block;
+  }
+  
+  .form-toggle-item input[type="radio"] {
+    display: none;
+  }
+  
+  .form-toggle-item label {
+    display: inline-block;
+    padding: 0px 15px;
+    line-height: 34px;
+    border: var(--input-border);
+    border-right: none;
+    cursor: pointer;
+    user-select: none;
+  }
+  
+  .form-toggle .item-1 label {
+    border-radius: var(--toggle-border-radius) 0 0 var(--toggle-border-radius);
+  }
+  
+  .form-toggle .item-2 label {
+    border-radius: 0 var(--toggle-border-radius) var(--toggle-border-radius) 0;
+    border-right: var(--input-border);
+  }
+  
+  .form-toggle .item-1 input[type="radio"]:checked + label {
+    background: rgb(217, 232, 205);
+  }
+  
+  .form-toggle .item-2 input[type="radio"]:checked + label {
+    background: rgb(253, 213, 213);
+  }
