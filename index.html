@@ -7,8 +7,33 @@
     <script src="main.js"></script>
     <script src="book.js"></script>
     <script src="library.js"></script>
+
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="book-container">
+        <div class="table-cotainer">
+            <table class="books">
+                <caption class="table-title">
+                    Books Library
+                </caption>
+                <thead>
+                    <tr class="table-header">
+                        <th class="checkbox-cell">
+                            <input type="checkbox" id="headerCheckbox" name="headerCheckbox"/>
+                        </th>
+                        <th>Title</th>
+                        <th>Author</th>
+                        <th>Pages</th>
+                        <th>Status</th>
+                    </tr>
+                </thead>
+                <tbody class="table-data"></tbody>
+            </table>
+        </div>
+        <button class="delete-button">Delete Selected Rows</button>
+        <button class="add-book">+</button>
+    </div>
     
 </body>
 </html>
